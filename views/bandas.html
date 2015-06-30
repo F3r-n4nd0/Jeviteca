@@ -1,1 +1,13 @@
 <h3>Bandas</h3>
+<table class="table table-striped">
+    <header>
+    <tr>
+        <th>Nombre</th>
+        <th>Origen</th>
+    </tr>
+    </header>
+    <tr ng-repeat="banda in bandas">
+        <td>{{::banda.name}}</td>
+        <td>{{::banda.origin}}</td>
+    </tr>
+</table>

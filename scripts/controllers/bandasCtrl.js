@@ -1,14 +1,11 @@
 angular
     .module('jeviteca')
-    .controller('bandasCtrl', ['$scope', function($scope) {
+    .controller('bandasCtrl', ['$scope', 'ApiService', function($scope, ApiService) {
 
-        var url = "/jeviteca/resources/data/bands.json";
-
-        $http
-            .get(url)
+        ApiService.obtenerDatos('data/bands.json')
             .then(
             function(datos) {
-                $scope.bandas = datos.data.results;
+                $scope.bandas = datos.data;
             },
             function() {
                 debugger;

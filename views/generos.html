@@ -1,1 +1,18 @@
 <h3>Generos</h3>
+<table class="table table-striped">
+    <header>
+        <tr>
+            <th>Nombre</th>
+            <th>Albums</th>
+        </tr>
+    </header>
+    <tr ng-repeat="genero in generos">
+        <td>{{::genero.name}}</td>
+        <td>
+            <ul class="list-group">
+                <li ng-repeat="album in genero.albums">
+                    {{::album.title}} - {{::album.band.name}}</li>
+            </ul>
+        </td>
+    </tr>
+</table>
