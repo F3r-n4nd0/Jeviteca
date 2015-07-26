@@ -1,18 +1,7 @@
 <h3>Albumes</h3>
-<div class="col-sm-6 col-md-4"
-     ng-repeat="album in albumes | orderBy:['-year','title']" >
-    <img ng-src="/jeviteca/resources/img/{{::album.image}}" class="img-thumbnail">
-    <div class="carousel-caption">
-        <h4>{{ ::album.title | fullTitle: album.year }}</h4>
-    </div>
-    <!--<div class="caption">-->
-    <!--<h4>{{ ::album.title | fullTitle: album.year }}</h4>-->
-    <!--<ul class="list-unstyled">-->
-    <!--<li ng-repeat="track in album.tracklist" >-->
-    <!--{{::track}}-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
-    <!--</div>-->
-</div>
 
+<elemento-tabla-album class="col-sm-6 col-md-4"
+                      ng-repeat="album in albumes | orderBy:['-year','title']"
+                      model="album">
+
+</elemento-tabla-album>

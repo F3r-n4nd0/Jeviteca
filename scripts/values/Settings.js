@@ -4,5 +4,5 @@
 angular
     .module("jeviteca")
     .value("Settings", {
-        "urlResources": "/jeviteca/resources/"
+        "urlResources": "resources/"
     });

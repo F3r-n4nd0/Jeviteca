@@ -1,15 +1,5 @@
 angular
     .module('jeviteca')
-    .controller('bandasCtrl', ['$scope', 'ApiService', function($scope, ApiService) {
-
-        ApiService.obtenerDatos('data/bands.json')
-            .then(
-            function(datos) {
-                $scope.bandas = datos.data;
-            },
-            function() {
-                debugger;
-            }
-        ) ;
-
+    .controller('bandasCtrl', ['$scope', 'Bandas', function($scope, Bandas) {
+        $scope.bandas = Bandas.data;
     }]);

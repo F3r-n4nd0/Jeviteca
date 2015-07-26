@@ -10,18 +10,32 @@ angular
 
         $routeSegmentProvider.segment('albumes', {
             controller: 'albumesCtrl',
-            templateUrl: 'views/albumes.html'
-
+            templateUrl: "views/albumes.html",
+            resolve: {
+                Albumes: ["ApiService", function(ApiService) {
+                    return ApiService.obtenerDatos('data/albums.json');
+                }]
+            }
         });
 
         $routeSegmentProvider.segment('bandas', {
             controller: 'bandasCtrl',
-            templateUrl: 'views/bandas.html'
+            templateUrl: 'views/bandas.html',
+            resolve: {
+                Bandas: ["ApiService", function(ApiService) {
+                    return ApiService.obtenerDatos('data/bands.json');
+                }]
+            }
         });
 
         $routeSegmentProvider.segment('generos', {
             controller: 'generosCtrl',
-            templateUrl: 'views/generos.html'
+            templateUrl: 'views/generos.html',
+            resolve: {
+                Generos: ["ApiService", function(ApiService) {
+                    return ApiService.obtenerDatos('data/genres.json');
+                }]
+            }
         });
 
         $routeProvider.otherwise({
