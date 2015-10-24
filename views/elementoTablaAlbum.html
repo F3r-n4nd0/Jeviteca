@@ -1,6 +1,7 @@
 <div>
     <img ng-src="resources/img/{{::model.image}}" class="img-thumbnail" />
-    <div class="carousel-caption">
+    <div class="carousel-caption right-caption" >
         <h4>{{ ::model.title | fullTitle: model.year }}</h4>
+        <span favorites element-id="model.id" storage-key="storageKey"></span>
     </div>
 </div>

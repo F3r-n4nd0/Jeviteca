@@ -7,7 +7,10 @@
     </tr>
     </header>
     <tr ng-repeat="banda in bandas">
-        <td>{{::banda.name}}</td>
+        <td>
+            {{::banda.name}}
+            <span favorites element-id="banda.name" storage-key="storageKey"></span>
+        </td>
         <td>{{::banda.origin}}</td>
     </tr>
 </table>
